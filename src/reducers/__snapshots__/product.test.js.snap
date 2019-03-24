@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product reducer should handle GET_PRODUCTS 1`] = `
+Object {
+  "data": Array [],
+  "message": "",
+  "query": "",
+  "status": "running",
+}
+`;
+
+exports[`Product reducer should handle PRODUCT_GET_FAILURE 1`] = `
+Object {
+  "data": Array [],
+  "message": "",
+  "query": "",
+  "status": "error",
+}
+`;
+
+exports[`Product reducer should handle PRODUCT_GET_SUCCESS 1`] = `
+Object {
+  "data": Array [],
+  "message": "",
+  "query": "",
+  "status": "ready",
+}
+`;
+
+exports[`Product reducer should return the initial state 1`] = `
+Object {
+  "data": Array [],
+  "message": "",
+  "query": "",
+  "status": "idle",
+}
+`;

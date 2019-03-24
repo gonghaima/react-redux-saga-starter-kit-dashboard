@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFound page should render all expected components 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.h1>
+      404
+    </styled.h1>
+    <Link
+      replace={false}
+      to="/"
+    >
+      <styled.h2>
+        go home
+      </styled.h2>
+    </Link>
+  </styled.div>
+</styled.div>
+`;
