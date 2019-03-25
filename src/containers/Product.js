@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { FaSearch } from "react-icons/fa";
 import { getProducts, getUsers, setPage, setSelection } from "../actions";
+import SearchBar from "../components/SearchBar";
 import {
   Content,
   ContentWrapper,
@@ -43,15 +44,7 @@ export class Product extends Component {
     return (
       <ContentWrapper>
         <Content>
-          <ContentListWithBorder>
-            <ContentListIcon>
-              <FaSearch />
-            </ContentListIcon>
-            <ContentListItemWithoutBorder>
-              <Search onChange={this.handleChange} placeholder="Search" />
-            </ContentListItemWithoutBorder>
-          </ContentListWithBorder>
-
+          <SearchBar handleChange={this.handleChange} />
           {filteredData.map((user, i) => (
             <ContentList key={user.id} user={user} last={userCount === i + 1} />
           ))}
