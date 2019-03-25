@@ -1,17 +1,9 @@
 import React, { Component } from "react";
 
 import { connect } from "react-redux";
-import { FaSearch } from "react-icons/fa";
 import { getProducts, getUsers, setPage, setSelection } from "../actions";
 import SearchBar from "../components/SearchBar";
-import {
-  Content,
-  ContentWrapper,
-  ContentListWithBorder,
-  ContentListIcon,
-  ContentListItemWithoutBorder,
-  Search
-} from "../modules/styled/Layout";
+import { Content, ContentWrapper } from "../modules/styled/Layout";
 import { filterUsers } from "../actions";
 import ContentList from "../components/content/ContentList";
 
