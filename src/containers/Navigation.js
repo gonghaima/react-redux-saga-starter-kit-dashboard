@@ -22,12 +22,18 @@ export class Navigation extends Component {
     this.props.dispatch(filterUsers(path));
   };
   render() {
+    const current = this.props.users.selected.queryValue;
     return (
       <NavigationWrapper>
         <StickyContainer>
           <NavUl>
             {Navs.map((item, i) => (
-              <NavListItem key={i} navigate={this.filterUser} {...item} />
+              <NavListItem
+                key={i}
+                navigate={this.filterUser}
+                currentSelected={current}
+                {...item}
+              />
             ))}
           </NavUl>
         </StickyContainer>

@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { appColor, titleColor } from '../theme';
+import styled from "styled-components";
+import theme, { appColor, titleColor, itemBgColor } from "../theme";
 
 const AppWrapper = styled.div`
   display: flex;
@@ -12,6 +12,9 @@ const AppWrapper = styled.div`
   h3,
   h5 {
     color: ${titleColor};
+  }
+  .selected {
+    background: ${theme.palette.headerBgColor};
   }
 `;
 
