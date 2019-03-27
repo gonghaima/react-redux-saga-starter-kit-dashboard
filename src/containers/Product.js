@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { connect } from "react-redux";
-import { getUsers, setSelection } from "../actions";
+import { getUsers } from "../actions";
 import SearchBar from "../components/SearchBar";
 import { Content, ContentWrapper } from "../modules/styled/Layout";
 import { filterUsers } from "../actions";
