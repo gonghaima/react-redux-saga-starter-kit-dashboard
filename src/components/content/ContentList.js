@@ -3,7 +3,6 @@ import { FaUserCircle, FaEllipsisV } from "react-icons/fa";
 import {
   ContentList,
   ContentListIcon,
-  ContentListItem,
   ContentItem,
   generateContentItemResponsive,
   ContentListUser,

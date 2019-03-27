@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import theme, { appColor, titleColor, itemBgColor } from "../theme";
+import theme, { appColor, titleColor } from "../theme";
 
 const AppWrapper = styled.div`
   display: flex;

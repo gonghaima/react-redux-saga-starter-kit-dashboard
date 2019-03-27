@@ -15,9 +15,6 @@ import {
 } from "../modules/styled/Home";
 
 export class TitleHeader extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const {
       users: { selected }
