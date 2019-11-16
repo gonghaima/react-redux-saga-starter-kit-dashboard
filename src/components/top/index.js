@@ -8,7 +8,7 @@ import {
   Title
 } from '../../modules/styled/Header';
 
-export default () => {
+export default ({ children }) => {
   return (
     <Header>
       <HeaderContent>
@@ -20,6 +20,7 @@ export default () => {
         </LeftSection>
         <FaElementor />
       </HeaderContent>
+      {children}
     </Header>
   );
 };
