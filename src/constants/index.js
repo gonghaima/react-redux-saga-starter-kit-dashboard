@@ -10,7 +10,8 @@ const ActionTypes = keyMirror({
   GET_USERS: undefined,
   USER_GET_SUCCESS: undefined,
   USER_GET_FAILURE: undefined,
-  FILTER_USERS: undefined
+  FILTER_USERS: undefined,
+  UPDATE_MENU_DISPLAY: undefined
 });
 
 const STATUS = {
