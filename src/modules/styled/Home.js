@@ -36,7 +36,7 @@ const DetailsSection = styled.div`
   padding-left: ${theme.spacer[4]};
   padding: ${theme.spacer[3]} ${theme.spacer[0]} ${theme.spacer[3]} ${
   theme.spacer[4]
-}
+  }
   width: 100%;
   display: block;
 
@@ -269,6 +269,15 @@ const SubHeader = styled.div`
     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
   height: 70px;
   z-index: 1201;
+  &.active {
+    visibility: visible;
+    transition: all 400ms ease-in;
+  }
+  &.hidden {
+    visibility: hidden;
+    transition: all 800ms ease-out;
+    transform: translate(0, -100%);
+  }
 `;
 
 const SubHeaderLeft = styled.h3`

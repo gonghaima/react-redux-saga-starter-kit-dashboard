@@ -16,14 +16,43 @@ import {
 import Top from "../components/top/index";
 
 export class Header extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      prevScrollpos: window.pageYOffset,
+      visible: true
+    };
+  }
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = () => {
+
+    const { prevScrollpos } = this.state;
+
+    const currentScrollPos = window.pageYOffset;
+    const visible = prevScrollpos > currentScrollPos;
+
+    this.setState({
+      prevScrollpos: currentScrollPos,
+      visible
+    });
+  };
   render() {
     const {
       users: { selected }
     } = this.props;
+    const vis = this.state.visible;
     return (
       <Top>
-        <SubHeader>
-          <SubHeaderLeft>Users</SubHeaderLeft>
+        <SubHeader className={vis ? "active" : "hidden"}>
+          <SubHeaderLeft>Users--{vis.toString()}--</SubHeaderLeft>
           <SubHeaderRight>
             <div>{selected.displayText}</div>
             <SettingOptions>
@@ -45,7 +74,8 @@ function mapStateToProps(state) {
   return {
     product: state.product,
     selection: state.selection,
-    users: state.users
+    users: state.users,
+    showHeader: state.showHeader
   };
 }
 
