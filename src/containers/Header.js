@@ -41,12 +41,14 @@ export class Header extends Component {
     // const visible = prevScrollpos > (currentScrollPos - 10);
     const visible = prevScrollpos > currentScrollPos;
 
-    this.setState({
-      prevScrollpos: currentScrollPos,
-      visible
-    }, () => {
-      this.props.dispatch(updateMenuDisplay(visible))
-    });
+    setTimeout(() => {
+      this.setState({
+        prevScrollpos: currentScrollPos,
+        visible
+      }, () => {
+        this.props.dispatch(updateMenuDisplay(visible))
+      });
+    }, 500);
   };
   render() {
     const {
