@@ -7,7 +7,7 @@ import theme from './modules/theme';
 import config from './config';
 import GlobalStyles from './components/GlobalStyles';
 import { store } from './store/index';
-import { Home } from './routes/Home';
+import Home from './routes/Home';
 import { NotFound } from './routes/NotFound';
 import { AppWrapper, Main } from './modules/styled/App'
 class App extends Component {

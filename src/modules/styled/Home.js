@@ -84,6 +84,12 @@ const HomeWrapper = styled.div`
   grid-template-areas: ". .";
   color: ${theme.palette.titleColor};
   padding-top: 142px;
+  transition: all 400ms ease-in;
+
+  &.smaller-wrapper{
+    padding-top: 72px;
+    transition: all 800ms ease-out;
+  }
 
   /* stylelint-disable */
   ${p =>

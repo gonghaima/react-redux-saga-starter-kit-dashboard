@@ -8,7 +8,6 @@ import {
 } from "../modules/styled/Nav";
 import NavListItem from "../components/navigation/NavListItem";
 import config from "../config";
-import { visible } from "ansi-colors";
 
 const { userMapping } = config;
 const Navs = Object.keys(userMapping).map(key => userMapping[key]);
@@ -28,9 +27,6 @@ export class Navigation extends Component {
       <NavigationWrapper>
         <StickyContainer>
           <NavUl>
-            <li>
-              {this.props.display.showMenu ? 'S' : 'H'}
-            </li>
             {Navs.map((item, i) => (
               <NavListItem
                 key={i}
