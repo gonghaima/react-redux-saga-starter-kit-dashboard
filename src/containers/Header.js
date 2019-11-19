@@ -16,6 +16,16 @@ import {
 import { updateMenuDisplay } from "../actions";
 import Top from "../components/top/index";
 
+const debounce = (func, delay) => {
+  let inDebounce
+  return function () {
+    const context = this
+    const args = arguments
+    clearTimeout(inDebounce)
+    inDebounce = setTimeout(() => func.apply(context, args), delay)
+  }
+}
+
 export class Header extends Component {
   constructor(props) {
     super(props);
@@ -26,7 +36,7 @@ export class Header extends Component {
     };
   }
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('scroll', debounce(this.handleScroll, 200));
   }
 
   componentWillUnmount() {
@@ -34,21 +44,21 @@ export class Header extends Component {
   }
 
   handleScroll = () => {
-
     const { prevScrollpos } = this.state;
 
     const currentScrollPos = window.pageYOffset;
-    // const visible = prevScrollpos > (currentScrollPos - 10);
     const visible = prevScrollpos > currentScrollPos;
 
-    setTimeout(() => {
-      this.setState({
-        prevScrollpos: currentScrollPos,
-        visible
-      }, () => {
-        this.props.dispatch(updateMenuDisplay(visible))
-      });
-    }, 500);
+    console.log(`visible is ${visible}`);
+    console.log(`this.state.visible is ${this.state.visible}`);
+
+    this.setState({
+      prevScrollpos: currentScrollPos,
+      visible
+    }, () => {
+      this.props.dispatch(updateMenuDisplay(visible))
+    });
+
   };
   render() {
     const {
